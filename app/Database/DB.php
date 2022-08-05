@@ -12,9 +12,9 @@ class DB
     {
         if (self::$pdo === null) {
             self::$pdo = new \PDO(
-                'mysql:host=localhost;dbname=dashboard',
-                'root',
-                ''
+                'mysql:host=sql11.freesqldatabase.com;dbname=sql11510912',
+                'sql11510912',
+                'jGv4yKcHnT'
             );
         }
 
