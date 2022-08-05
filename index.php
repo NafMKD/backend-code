@@ -236,10 +236,10 @@
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer" style="margin-left: 0 !important;">
     <div class="copyright">
-      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+      &copy; Copyright <a href="http://linose-studio.herokuapp.com/"><strong><span>Linose-studio</span></strong></a>. All Rights Reserved
     </div>
     <div class="credits">
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      Version 1.0.0
     </div>
   </footer><!-- End Footer -->
 
