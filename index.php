@@ -46,9 +46,24 @@
   </header><!-- End Header -->
 
   <main id="main" class="main" style="margin-left: 0 !important;">
-
-    <div class="pagetitle">
-      <h1>Sales Performance Dashboard</h1>
+    <div class="row">
+      <div class="pagetitle col-8">
+        <h1 style="padding: 6%; font-size: 40px;">Sales Performance Dashboard</h1>
+      </div>
+      <div class="col-4">
+        <div class="card info-card sales-card">
+          <div class="card-body">
+            <h5 class="card-title">Buisness Closed</span></h5>
+            <div class="ps-3">
+              <h6 id="buisness" style="font-size: 28px; font-weight: 700;color: #012970;">
+                <div class="spinner-border text-primary" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <section class="section dashboard">
@@ -67,7 +82,11 @@
                       <i class='bx bxs-phone-call'></i>
                     </div>
                     <div class="ps-3">
-                      <h6>4238</h6>
+                      <h6 id="totalCall">
+                        <div class="spinner-border text-primary" role="status">
+                          <span class="visually-hidden">Loading...</span>
+                        </div>
+                      </h6>
                     </div>
                   </div>
                 </div>
@@ -84,7 +103,11 @@
                       <i class='bx bx-phone-call' ></i>
                     </div>
                     <div class="ps-3">
-                      <h6>247</h6>
+                      <h6 id="MeaningCall">
+                        <div class="spinner-border text-primary" role="status">
+                          <span class="visually-hidden">Loading...</span>
+                        </div>
+                      </h6>
                     </div>
                   </div>
                 </div>
@@ -101,7 +124,11 @@
                       <i class='bx bxs-report'></i>
                     </div>
                     <div class="ps-3">
-                      <h6>247</h6>
+                      <h6 id="quoIssue">
+                        <div class="spinner-border text-primary" role="status">
+                          <span class="visually-hidden">Loading...</span>
+                        </div>
+                      </h6>
                     </div>
                   </div>
                 </div>
@@ -118,7 +145,11 @@
                       <i class='bx bx-money-withdraw'></i>
                     </div>
                     <div class="ps-3">
-                      <h6>$12k</h6>
+                      <h6 id="quoValue">
+                        <div class="spinner-border text-primary" role="status">
+                          <span class="visually-hidden">Loading...</span>
+                        </div>
+                      </h6>
                     </div>
                   </div>
                 </div>
@@ -140,35 +171,12 @@
                   <h5 class="card-title">Total Vs Meaningfull Calls</h5>
 
                   <!-- Line Chart -->
-                  <div id="lineChart" style="min-height: 400px;" class="echart"></div>
-    
-                  <script>
-                    document.addEventListener("DOMContentLoaded", () => {
-                      echarts.init(document.querySelector("#lineChart")).setOption({
-                        tooltip: {
-                          trigger: 'item'
-                        },
-                        xAxis: {
-                          type: 'category',
-                          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-                        },
-                        yAxis: {
-                          type: 'value'
-                        },
-                        series: [{
-                          name:'Totla call',
-                          data: [150, 230, 224, 218, 135, 147, 260],
-                          type: 'line',
-                          smooth: true
-                        },{
-                          name:'Meaningfull call',
-                          data: [10, 20, 24, 28, 35, 17, 60],
-                          type: 'line',
-                          smooth: true
-                        }]
-                      });
-                    });
-                  </script>
+                  <div id="lineChart" style="min-height: 400px;" class="echart">
+                    <div class="spinner-border text-primary" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                  </div>
+
                   <!-- End Line Chart -->
     
                 </div>
@@ -184,58 +192,11 @@
                   <h5 class="card-title">Quotation Used by Sales Agent</h5>
 
                   <!-- Donut Chart -->
-                  <div id="donutChart" style="min-height: 400px;" class="echart"></div>
-    
-                  <script>
-                    document.addEventListener("DOMContentLoaded", () => {
-                      echarts.init(document.querySelector("#donutChart")).setOption({
-                        tooltip: {
-                          trigger: 'item'
-                        },
-                        series: [{
-                          name: 'Access From',
-                          type: 'pie',
-                          radius: ['40%', '70%'],
-                          avoidLabelOverlap: false,
-                          label: {
-                            show: false,
-                            position: 'center'
-                          },
-                          emphasis: {
-                            label: {
-                              show: true,
-                              fontSize: '18',
-                              fontWeight: 'bold'
-                            }
-                          },
-                          labelLine: {
-                            show: false
-                          },
-                          data: [{
-                              value: 1048,
-                              name: 'Search Engine'
-                            },
-                            {
-                              value: 735,
-                              name: 'Direct'
-                            },
-                            {
-                              value: 580,
-                              name: 'Email'
-                            },
-                            {
-                              value: 484,
-                              name: 'Union Ads'
-                            },
-                            {
-                              value: 300,
-                              name: 'Video Ads'
-                            }
-                          ]
-                        }]
-                      });
-                    });
-                  </script>
+                  <div id="donutChart" style="min-height: 400px;" class="echart">
+                    <div class="spinner-border text-primary" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                  </div>
                   <!-- End Donut Chart -->
     
                 </div>
@@ -251,50 +212,11 @@
                   <h5 class="card-title">Quotation Value by Sales Agent</h5>
 
                   <!-- Pie Chart -->
-                  <div id="pieChart" style="min-height: 400px;" class="echart"></div>
-    
-                  <script>
-                    document.addEventListener("DOMContentLoaded", () => {
-                      echarts.init(document.querySelector("#pieChart")).setOption({
-                        tooltip: {
-                          trigger: 'item'
-                        },
-                        series: [{
-                          name: 'Access From',
-                          type: 'pie',
-                          radius: '50%',
-                          data: [{
-                              value: 1048,
-                              name: 'Search Engine'
-                            },
-                            {
-                              value: 735,
-                              name: 'Direct'
-                            },
-                            {
-                              value: 580,
-                              name: 'Email'
-                            },
-                            {
-                              value: 484,
-                              name: 'Union Ads'
-                            },
-                            {
-                              value: 300,
-                              name: 'Video Ads'
-                            }
-                          ],
-                          emphasis: {
-                            itemStyle: {
-                              shadowBlur: 10,
-                              shadowOffsetX: 0,
-                              shadowColor: 'rgba(0, 0, 0, 0.5)'
-                            }
-                          }
-                        }]
-                      });
-                    });
-                  </script>
+                  <div id="pieChart" style="min-height: 400px;" class="echart">
+                    <div class="spinner-border text-primary" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                  </div>
                   <!-- End Pie Chart -->
     
                 </div>
@@ -324,6 +246,7 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/chart.js/chart.min.js"></script>
@@ -332,6 +255,7 @@
   <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="script.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
